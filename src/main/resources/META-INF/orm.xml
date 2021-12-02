@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+    <description>Mapping</description>
+    <package>by.it.academy.enterprise.pojo</package>
+    <mapped-superclass class="pojo.strategy.mapped.ProductLifeTime">
+        <entity-listeners>
+            <entity-listener class="pojo.strategy.mapped.Fruits"/>
+            <entity-listener class="pojo.strategy.mapped.Vegetables"/>
+        </entity-listeners>
+        <attributes>
+            <id name="id"/>
+            <basic name="dateCreate" optional="false">
+                <column name="date_create" nullable="false" />
+            </basic>
+            <basic name="shelfLife" optional="false">
+                <column name="shelf_life" nullable="false" />
+            </basic>
+        </attributes>
+    </mapped-superclass>
+    <entity class="pojo.strategy.mapped.Fruits" name="Fruits">
+        <table name="fruits"/>
+    </entity>
+    <entity class="pojo.strategy.mapped.Vegetables" name="Vegetables">
+        <table name="vegetables"/>
+    </entity>
+    <entity class="pojo.strategy.one.AnimalName" name="AnimalName">
+        <table name="animal_name"/>
+    </entity>
+    <entity class="pojo.strategy.one.Cats" name="Cats">
+        <table name="cats"/>
+    </entity>
+    <entity class="pojo.strategy.one.Dogs" name="Dogs">
+        <table name="dogs"/>
+    </entity>
+    <entity class="pojo.strategy.two.ProgramAuthor" name="ProgramAuthor">
+        <table name="program_author_name"/>
+    </entity>
+    <entity class="pojo.strategy.two.OsProgram" name="OsProgram">
+        <table name="os_programs"/>
+    </entity>
+    <entity class="pojo.strategy.two.WebProgram" name="WebProgram">
+        <table name="web_program"/>
+    </entity>
+    <entity class="pojo.strategy.three.Person" name="Person">
+        <table name="person"/>
+    </entity>
+    <entity class="pojo.strategy.three.Employee" name="Employee">
+        <table name="employee"/>
+    </entity>
+    <entity class="pojo.strategy.three.Student" name="Student">
+        <table name="student"/>
+    </entity>
+</entity-mappings>
